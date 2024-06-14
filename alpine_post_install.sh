@@ -7,7 +7,7 @@ doas sh -c "echo 'permit persist :wheel cmd reboot' >> /etc/doas.conf"
 doas sh -c "echo 'permit persist :wheel cmd poweroff' >> /etc/doas.conf"
 
 # Install necessary packages
-packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-jetbrains-mono-nerd gcc g++ libzinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev firefox"
+packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev firefox"
 doas apk add $packages
 
 
