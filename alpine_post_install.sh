@@ -7,7 +7,7 @@ doas sh -c "echo 'permit nopass :wheel cmd reboot' >> /etc/doas.conf"
 doas sh -c "echo 'permit nopass :wheel cmd poweroff' >> /etc/doas.conf"
 
 # Install necessary packages
-packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev firefox"
+packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev dbus dbus-x11 firefox"
 doas apk add $packages
 
 
@@ -32,6 +32,9 @@ doas rc-update add udev
 doas rc-update add udev-trigger boot
 doas rc-update add udev-settle boot
 doas rc-update add udev-postmount boot
+
+# Enable dbus
+doas rc-update add dbus
 
 # Update font cache
 fc-cache -rv
