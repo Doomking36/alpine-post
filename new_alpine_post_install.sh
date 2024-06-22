@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Modify doas.conf for additional permissions
-doas sh -c "echo 'permit persist :wheel' >> /etc/doas.conf"
-doas sh -c "echo 'permit nopass root' >> /etc/doas.conf"
-doas sh -c "echo 'permit nopass :wheel cmd reboot' >> /etc/doas.conf"
-doas sh -c "echo 'permit nopass :wheel cmd poweroff' >> /etc/doas.conf"
+doas sh -c "echo 'permit persist :wheel' >> /etc/doas.d/doas.conf"
+doas sh -c "echo 'permit nopass root' >> /etc/doas.d/doas.conf"
+doas sh -c "echo 'permit nopass :wheel cmd reboot' >> /etc/doas.d/doas.conf"
+doas sh -c "echo 'permit nopass :wheel cmd poweroff' >> /etc/doas.d/doas.conf"
 
 # Install necessary packages
 packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra font-liberation ttf-liberation font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev dbus dbus-x11 firefox"
