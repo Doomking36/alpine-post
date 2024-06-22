@@ -13,11 +13,11 @@ doas apk add $packages
 
 # Clone necessary repositories and install
 git clone https://github.com/siduck/chadwm --depth 1 ~/.config/chadwm
-cd ~/.config/chadwm/chadwm && make && doas make install && cd
+cd ~/.config/chadwm/chadwm && make && doas make install && cd ~/
 cp ~/.config/chadwm/scripts/run.sh ~/
 
 git clone https://github.com/lukesmithxyz/st
-cd st && make && doas make install && cd
+cd st && make && doas make install && cd ~/
 
 git clone https://github.com/nvim-lua/kickstart.nvim ~/.config/nvim
 
