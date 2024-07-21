@@ -8,7 +8,7 @@ doas sh -c "echo 'permit nopass :wheel cmd poweroff' >> /etc/doas.d/doas.conf"
 doas sh -c "echo 'permit nopass :wheel cmd apk args update' >> /etc/doas.d/doas.conf"
 
 # Install necessary packages
-packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra font-liberation ttf-liberation font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev dbus dbus-x11 firefox"
+packages="sx neovim fastfetch make fontconfig-dev freetype-dev harfbuzz-dev libxft-dev imlib2-dev dash xsetroot font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra font-liberation ttf-liberation font-jetbrains-mono-nerd gcc g++ libxinerama-dev alsa-lib alsa-utils picom feh rofi font-noto-extra ttf-liberation xf86-input-libinput pciutils ncurses udev dbus dbus-x11 firefox mesa-dri-gallium"
 doas apk add $packages
 
 
@@ -23,10 +23,10 @@ cd st && make && doas make install && cd ~/
 git clone https://github.com/nvim-lua/kickstart.nvim ~/.config/nvim
 
 # Add necessary groups
-doas addgroup dk video
-doas addgroup dk input
-doas addgroup dk audio
-doas addgroup dk tty
+doas addgroup $USER video
+doas addgroup $USER input
+doas addgroup $USER audio
+doas addgroup $USER tty
 
 # Configure udev
 doas rc-update add udev
